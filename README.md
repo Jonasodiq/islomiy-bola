@@ -1,4 +1,4 @@
-# sass-base-2022
+# islomiy-bola
 
 ## Clone to update base system - Klona för att uppdatera bassystemet
 `git clone https://github.com/Jonasodiq/sass-base-2022.git .`
@@ -6,5 +6,5 @@
 `git clone https://github.com/Jonasodiq/sass-base-2022.git . && rm -rf .git`
 
 ## Develop
-`sass --watch src/scss/style.scss style.css`
-# islomiy-bola
+sass --watch src/scss/style.scss style.css
+
