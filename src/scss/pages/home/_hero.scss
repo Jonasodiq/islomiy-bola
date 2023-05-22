@@ -1,3 +1,122 @@
+@use '../../components/details';
+@use "../../components/buttons" as button;
 .hero {
-    background-color: black;
+    // background-color: #999; //temp
+    height: 700px;
+    margin-top: 96px;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    
+    &__inner {
+        grid-column: inner;
+        background-color: #F8EF83;
+        border-radius: 50px;
+        position: relative;
+        display: flex;
+        justify-content: start;
+        gap: 5rem;
+    }
+
+    &__img {
+        width: 400px;
+        height: auto;
+        object-fit: contain;
+        position: absolute;
+        right: 230px;
+        bottom: 0;
+    }
+    
+    &__bola-2 {
+        width: 270px;
+        right: 30px;
+    }
+
+    &__muz {
+        top: 0;
+        right: 90px;
+    }
+
+    &__dots {
+        width: 120px;
+        top: 150px;
+        right: 90px;
+    }
+
+    &__arrow-1 {
+        width: 120px;
+        top: 30px;
+        right: 700px;
+    }
+    
+    &__circle {
+        width: 220px;
+        bottom: 230px;
+        right: 700px;
+    }
+    
+    &__rocket {
+        width: 220px;
+        bottom: 30px;
+        right: 700px;
+    }
+
+    &__content {
+        width: 250px;
+        margin-top: 10rem;
+        z-index: 1;
+    }
+
+    &__title {
+        font-family: 'Hobeaux';
+        font-size: 7rem;
+        color: #333;
+        margin: 0;
+
+        & span {
+            font-size: 4rem;
+        }
+    }
+
+    &__desc {
+        font-family: 'Freude';
+        font-size: 2rem;
+        color: #777;
+        margin: 0;
+    }
+
+    // Aside
+    &__aside {
+        // position: absolute;
+        background-color: #E3CBF2;
+        width: 250px;
+        height: 700px;
+        border-radius: 50px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items:center
+
+        
+    }
+
+    &__signin {
+        width: 150px;
+        @include button.default(
+        $color: var(--color-dark),
+        $background: rgb(0, 183, 255)
+        );
+    }
+
+    &__list {
+        margin: 0;
+        list-style: none;
+        
+    }
+
+    &__reg {
+        margin: 0;
+        @include details.separator;
+    }
+
+    
 }
