@@ -1,5 +1,5 @@
 // Line
-@mixin separator($align: left, $margin: var(--gap-m)) {
+@mixin separator($align: left, $margin: var(--gap-s)) {
   &:after {
     content: "";
     display: block;
@@ -8,7 +8,7 @@
     background-color: var(--color-dark-500);
     margin-top: $margin;
     margin-bottom: $margin;
-
+    
     @if $align == center {
       margin: $margin auto;
     }
