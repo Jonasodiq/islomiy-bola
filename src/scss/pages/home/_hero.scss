@@ -2,7 +2,7 @@
 @use "../../components/buttons" as button;
 .hero {
     // background-color: #999; //temp
-    height: 700px;
+    min-height: 700px;
     margin-top: 96px;
     display: grid;
     grid-template-columns: var(--grid-container);
@@ -11,70 +11,145 @@
         grid-column: inner;
         background-color: #F8EF83;
         border-radius: 50px;
-        position: relative;
-        display: flex;
-        justify-content: start;
-        gap: 5rem;
-    }
-
-    &__img {
-        width: 400px;
-        height: auto;
-        object-fit: contain;
-        position: absolute;
-        right: 230px;
-        bottom: 0;
-    }
-    
-    &__bola-2 {
-        width: 270px;
-        right: 30px;
-    }
-
-    &__muz {
-        top: 0;
-        right: 90px;
-    }
-
-    &__dots {
-        width: 120px;
-        top: 150px;
-        right: 90px;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-template-areas:
+        "sd sd main main  main  muz muz muz muz"
+        "sd sd main main  main  dts dts dts dts"
+        "sd sd main main  main  bl1 bl1 bl2 bl2"
+        "sd sd rock rock  rock  bl1 bl1 bl2 bl2";
     }
 
     &__arrow-1 {
-        width: 120px;
-        top: 30px;
-        right: 700px;
-    }
-    
-    &__circle {
+        grid-area: main;
         width: 220px;
-        bottom: 230px;
-        right: 700px;
-    }
-    
-    &__rocket {
-        width: 220px;
-        bottom: 30px;
-        right: 700px;
+        justify-self: center;
+        align-self: start;
+        width: 150px;
     }
 
+    &__circle {
+        grid-area: main;
+        width: 220px;
+        align-self: end;
+    }
     &__content {
-        width: 250px;
-        margin-top: 10rem;
+        grid-area: main;
+        justify-self: end;
+        align-self: end;
+    }
+    &__rocket{
+        grid-area: rock;
+        align-self: end;
+        width: 220px;
+    }
+    &__muz {
+        grid-area: muz;
+        width: 420px;
+    }
+
+    &__dots {
+        grid-area: dts;
+        justify-self: center;
+        width: 120px;
+    }
+    &__bola-1 {
+        grid-area: bl1;
+        align-self: end;
+    }
+    &__bola-2 {
+        grid-area: bl2;
+        align-self: end;
+    }
+    
+    // Aside
+    &__aside {
+        grid-area: sd;
+        background-color: #E3CBF2;
+        border-radius: 50px;
         z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+
+        &--title {
+            margin: 2rem 0 0 0;
+        }
+    }
+
+    
+    &__name, &__pass-1, &__signin {
+        margin-top: 1rem;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        border: 1px solid #2d9fd9;
+        width: 170px;
+        height: 30px;
+        padding-left: 10px;
+    }
+    &__pass-2 {
+        font-size: 10px;
+        margin-top: 6px;
+    }
+
+    &__signin {
+        padding-left: 3rem;
+        background-color:#2d9fd9;
+        color: #fff;
+        box-shadow: 3px 3px 3px 2px rgba(101, 101, 101, 0.212);
+    }
+
+    &__reg {
+        font-size: 12px;
+        @include details.separator($align: center);
+    }
+
+    &__list {
+        margin: 0;
+        padding-left: 0;
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__link {
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--color-accent);
+            transform-origin: bottom left;
+            transition: transform 0.25s ease-out;
+        }
+    }
+    &:hover:after {transform: scaleX(1); transform-origin: bottom left;}
+    &__5:hover:after {transform: scaleX(0.5);} 
+    &__6:hover:after {transform: scaleX(0.6);} 
+    &__7:hover:after {transform: scaleX(0.7);} 
+    &__8:hover:after {transform: scaleX(0.8);} 
+    &__1:hover:after {transform: scaleX(1);}
+
+
+    &__text {
+        font-family: 'Freude';
+        font-size: 6rem;
+        margin: 0;
+        transform: translateY(2rem);
     }
 
     &__title {
         font-family: 'Hobeaux';
-        font-size: 7rem;
+        font-size: 9rem;
         color: #333;
         margin: 0;
-
-        & span {
-            font-size: 4rem;
-        }
+        letter-spacing: -1px;
     }
 
     &__desc {
@@ -82,40 +157,6 @@
         font-size: 2rem;
         color: #777;
         margin: 0;
-    }
-
-    // Aside
-    &__aside {
-        // position: absolute;
-        background-color: #E3CBF2;
-        width: 250px;
-        height: 700px;
-        border-radius: 50px;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items:center
-
-        
-    }
-
-    &__signin {
-        width: 150px;
-        @include button.default(
-        $color: var(--color-dark),
-        $background: rgb(0, 183, 255)
-        );
-    }
-
-    &__list {
-        margin: 0;
-        list-style: none;
-        
-    }
-
-    &__reg {
-        margin: 0;
-        @include details.separator;
     }
 
     
