@@ -72,7 +72,7 @@
                                     z M29.3,13.9c0-2.3,1.4-2.9,3.8-2.9c2.3,0,4,0.6,4,2.6c0,2.8-0.2,4.8-0.2,6.8c0,1.8,0.8,3,0.8,4.6c0,2.4-1.1,4.3-4.4,4.3
                                     c-3.3,0-4.3-1-4.3-3.7s0.4-5.3,0.4-8C29.4,16.5,29.3,15.1,29.3,13.9z"/>
                             </g>
-                            <g id="Pen">
+                            <g class="pen">
                                 <path id="pen-line" class="st0" d="M16.5,54.4c0,10.8,0,21.5,0,32.3c0,4-1.7,5.7-5.7,5.7c-1.8,0-3.7,0-5.5,0c-3.4,0-5.3-1.9-5.3-5.3
                                     c0-11.8,0-23.7,0-35.5C0,41.8,0.1,32,0,22.2c0-2.4,1-4.3,1.7-6.4c1.8-4.9,3.6-9.5,5.6-14.4c0.4-1,1.6-1,1.8-0.4
                                     c2.2,6,4.6,11.8,6.9,17.8c0.3,0.9,0.5,1.8,0.5,2.7C16.5,32.6,16.5,43.5,16.5,54.4z M5.9,21.8c-0.1,0.1-0.2,0.2-0.2,0.3
@@ -101,21 +101,20 @@
                             </g>
                         </g>
                     </svg>
-
                 </a>
 
                 <!-- Menu -->
                 <nav class="menu">
                     <ul class="menu__list">
                         <li class="menu__item"><a href="#home" class="menu__link">Home</a></li>
-                        <li class="menu__item"><a href="#about" class="menu__link">About</a></li>
-                        <li class="menu__item"><a href="#gallery" class="menu__link">Gallery</a></li>
-                        <li class="menu__item"><a href="contact" class="menu__link">Contact</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Gallery</a></li>
+                        <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
                     </ul>
 
                     <!-- Hamburger -->
                     <button class="menu__button">
-                        <div class="hamburger"></div>
+                        <div class="menu__button--hamburger"></div>
                     </button>
                 </nav>
             </div>
@@ -125,8 +124,8 @@
         <!-- Hero -->
         <section id="home" class="hero">
             <div class="hero__inner">
-                <img src="assets/images/bola-2.png" alt="bola-2" class="hero__img hero__bola-2">
                 <img src="assets/images/bola-1.png" alt="bola-1" class="hero__img hero__bola-1">
+                <img src="assets/images/bola-2.png" alt="bola-2" class="hero__img hero__bola-2">
                 <img src="assets/images/muz.png" alt="muz" class="hero__img hero__muz">
                 <img src="assets/images/dots.png" alt="dots" class="hero__img hero__dots">
                 <img src="assets/images/arrow-1.png" alt="arrow-1" class="hero__img hero__arrow-1">
@@ -135,32 +134,33 @@
                 
                 <!-- Aside -->
                 <div class="hero__aside">
-                    <h4>Logga in</h4>
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Password">
-                    <p>Glomt lösenord</p>
+                    <h4 class="hero__aside--title">Logga in</h4>
+                    <input type="text" class="hero__name" placeholder="Name">
+                    <input type="text" class="hero__pass-1" placeholder="Password">
+                    <a href="" class="hero__pass-2">Glomt lösenord</a>
                     <a href="#" class="hero__signin">Logga in</a>
-                    <p class="hero__reg">Har du ingen konto? <br> <a href="#">Gå med!</a></p>
+                    <p class="hero__reg">Har du ingen konto? <a href="#">Gå med!</a></p>
 
                     <ul class="hero__list">
-                        <li class="hero__item"><a href="">Qur'an</a></li>
-                        <li class="hero__item"><a href="">Hadis</a></li>
-                        <li class="hero__item"><a href="">Tajvid</a></li>
-                        <li class="hero__item"><a href="">Arab tili</a></li>
-                        <li class="hero__item"><a href="">Kitoblar</a></li>
-                        <li class="hero__item"><a href="">Tavhid</a></li>
-                        <li class="hero__item"><a href="">Namoz ahkomlari</a></li>
-                        <li class="hero__item"><a href="">O'yinlar</a></li>
-                        <li class="hero__item"><a href="">Savol-javob</a></li>
-                        <li class="hero__item"><a href="">Article</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__6">Qur'an</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__5">Hadis</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__5">Tajvid</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__6">Arab tili</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__6">Kitoblar</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__6">Tavhid</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__6">Namoz</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__6">O'yinlar</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__1">Savol-javob</a></li>
+                        <li class="hero__item"><a href="#" class="hero__link hero__8">Krasvord</a></li>
                     </ul>
 
                 </div>
 
 
                 <div class="hero__content">
-                    <h1 class="hero__title"><span>islomiy</span> <br> Bola</h1>
-                    <h4 class="hero__desc">Bolalar bizning kelajagimiz</h4>
+                    <h2 class="hero__text">islomiy</h2>
+                    <h1 class="hero__title">Bola</h1>
+                    <h4 class="hero__desc">Bolalar bizning <br>kelajagimiz</h4>
                 </div>
                 
             </div>
