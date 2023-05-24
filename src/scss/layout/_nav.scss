@@ -1,15 +1,28 @@
-@use '../components/buttons' as button;
+
 .menu {
     display: flex;
     justify-content: end;
     gap: var(--gap-l);
 
+    &__link {
+        
+     &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 3px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--color-accent);
+        transform-origin: bottom left;
+        transition: transform 0.25s ease-out;
+    }
+
+    &:hover:after {transform: scaleX(1); transform-origin: bottom left;}
+    }
+
     &__list{
-        // display: flex;
-        // align-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0;
         display: flex;
         align-items:center;
         gap: var(--gap-l);
@@ -18,65 +31,69 @@
     &__link {
         font-size: var(--font-size-2);
         transition: all 0.2s;
-        &:hover {
-            color: var(--color-accent);
-        }
-    }
-
-    &__button {
-        @include button.default;
-        width: 34px;
-        height: 34px;
         position: relative;
-        cursor: pointer;
     }
 
-    // Focus is temporary until we include Javascript- Фокус временный, пока мы не включим Javascript
-    &--close, &:focus {
+   &__button {
+        height: 26px;
+        width: 26px;
+        position: relative;
+        background: none;
+        padding: 0;
+        border: 0;
+        top: 16px;
+        border-radius: 0;
 
-        .hamburger{
-            height: 0;
+        &:focus, &--close {
 
-            &::before, &::after {
-                top: 0;
-                transition: top 0.2s, transform 0.2s 0.2s, width 0.2s 0.2s;
+            .menu__button--hamburger {
+                transition: transform 0.2s 0.2s;
+                transform: rotate(45deg) translate(-50%, -50%);
+                background-color: var(--color-accent);
+                
+                &:before {
+                    transition: top 0.2s, transform 0.2s 0.2s;
+                    transform: rotate(95deg) translate(0, 0);
+                    top: 0;
+                }
+
+                &:after {
+                    transition: width 0.2s;
+                    width: 0;
+                }
             }
-
-            &::before {
-                transform: rotate(-45deg);
-            }
-
-            &::after {
+        }
+        
+        &--hamburger {
+            transform-origin: left top;
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transition: transform 0.2s;
+            transform: translate(-50%, -50%) rotate(0);
+            background-color: #555;
+    
+            &:before, &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -8px;
+                height: 2px;
                 width: 100%;
-                transform: rotate(45deg);
+                background-color: inherit;
+            }
+    
+            &:before {
+                transition: top 0.2s 0.2s, transform 0.2s;
+            }
+    
+            &:after {
+                top: 8px;
+                width: 70%;
+                transition: width 0.2s 0.2s;
             }
         }
     }
-}
-
-.hamburger {
-    background-color: red;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50);
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    transition: height 0s 0.2s;
-
-    &:before, &:after {
-        content: '';
-        display: block;
-        background-color: inherit;
-        height: 2px;
-        width: 100%;
-        position: absolute;
-        top: -8px;
-        transition: top 0.2s 0.2s, transform 0.2s;
-    }
-    &:after {
-        top: 8px;
-        right: 0;
-    }
-    
 }
