@@ -1,0 +1,41 @@
+.contact {
+    background: #ECF077;
+    min-height: 18rem;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    padding: var(--section-gap) 0;
+    overflow: hidden;
+
+    &__inner {
+        grid-column: inner;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__desc {
+        text-align: center;
+        & span {
+            font-weight: bold;
+        }
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+
+        & img {
+            width: 50px;
+        }
+    }
+}
