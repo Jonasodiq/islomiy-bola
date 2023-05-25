@@ -475,4 +475,25 @@ li {
   padding: 0 3rem 2rem;
 }
 
+.gallery {
+  display: grid;
+  grid-template-columns: var(--grid-container);
+  padding: var(--section-gap) 0;
+  overflow: hidden;
+}
+.gallery__inner {
+  grid-column: inner;
+}
+.gallery__title {
+  text-align: center;
+}
+.gallery__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--gap-l);
+}
+.gallery__image {
+  border-radius: 50px;
+}
+
 /*# sourceMappingURL=style.css.map */
