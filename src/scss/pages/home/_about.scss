@@ -1,0 +1,100 @@
+// @use '../../utilities/responsive';
+.about {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    padding: var(--section-gap) 0;
+    overflow: hidden;
+
+    &__inner {
+        grid-column: inner;
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-auto-rows: minmax(50px, auto);
+        grid-template-areas:
+        "main main main main  main  bol bol bol bol"
+        "main main main main  main  bol bol bol bol"
+        "main main main main  main  bol bol bol bol"
+        "main main main main  main  bol bol bol bol";
+           
+        // // 1024 (64rem)
+        // @include responsive.max(64rem) {
+        //     grid-template-columns: 1fr;
+        //     padding: var(--gap-xl);
+        // }
+        // // 640px
+        // @include responsive.max(40rem) {
+        //     padding: 0 var(--gap-m);
+        // }
+
+        // @include responsive.max(30rem) {
+        //     padding: 0;
+        // }
+    }
+
+    &__main {
+        grid-area: main;
+        max-width: 100%;
+        align-self: center;
+    }
+
+     &__green {
+        grid-area: main;
+        width: 270px;
+        align-self: end;
+        transform: translateY(7rem);
+    }
+
+    &__arrow-2 {
+        grid-area: main;
+        width: 120px;
+        justify-self: right;
+        align-self: end;
+    }
+
+    &__bola {
+        grid-area: bol;
+        width: 450px;
+        justify-self: right;
+        align-self: end;
+    }
+
+    &__rec {
+        grid-area: bol;
+        width: 500px;
+        justify-self: right;
+        align-self: end;
+    }
+
+    &__orange {
+        grid-area: bol;
+        align-self: end;
+        transform: translateY(5rem);
+    }
+
+    &__cloud-1 {
+        grid-area: bol;
+        width: 270px;
+        transform: translateX(-6rem);
+    }
+    
+    &__cloud-2 {
+        grid-area: bol;
+        justify-self: right;
+        width: 130px;
+    }
+
+    &__content {
+        background-color:#F0FCC0;
+        margin: 20px;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+
+    &__desc {
+        margin: 0;
+        padding: 0 3rem 2rem ;
+    }
+}
