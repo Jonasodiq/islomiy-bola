@@ -7,14 +7,17 @@
 
     &__inner {
         grid-column: inner;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items:center
     }
 
     &__branding {
         
         & svg{
-            margin-top: 2rem;
-            width: 100%;
-            height: 50px;
+            margin: 2rem 0 0 0;
+            width: 200px;
         }
         :hover .pen{transform: rotate(30deg);}
     }
@@ -26,4 +29,23 @@
         color: #555;
         margin-top: 1rem;
     }
+}
+
+.scroll-up {
+    position: fixed;
+    right: 64px;
+    bottom: 64px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    border: 0;
+    background: #fffcf2;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-up:hover {
+    background-color: #ffbc40
 }
