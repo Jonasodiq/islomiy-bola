@@ -146,7 +146,7 @@ li {
 
 .branding svg {
   margin-left: 2rem;
-  width: 100%;
+  width: 150px;
   height: 50px;
 }
 .branding :hover .pen {
@@ -278,7 +278,6 @@ li {
 }
 .footer__branding svg {
   margin: 2rem 0 0 0;
-  width: 200px;
 }
 .footer__branding :hover .pen {
   transform: rotate(30deg);
