@@ -138,18 +138,35 @@ li {
   justify-content: space-between;
   align-self: center;
 }
-.header__branding svg {
-  margin-left: 3rem;
-  width: 100%;
-  height: 50px;
-}
-.header__branding :hover .pen {
-  transform: rotate(30deg);
-}
 .header__nav {
   display: flex;
   justify-content: end;
   gap: 2rem;
+}
+
+.branding svg {
+  margin-left: 2rem;
+  width: 100%;
+  height: 50px;
+}
+.branding :hover .pen {
+  transform: rotate(30deg);
+}
+
+.st333 {
+  fill: #333;
+}
+
+.st199 {
+  fill: #F4991A;
+}
+
+.st237 {
+  fill: #FFEC37;
+}
+
+.st397 {
+  fill: #9C4C97;
 }
 
 .pen {
@@ -254,11 +271,14 @@ li {
 }
 .footer__inner {
   grid-column: inner;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 .footer__branding svg {
-  margin-top: 2rem;
-  width: 100%;
-  height: 50px;
+  margin: 2rem 0 0 0;
+  width: 200px;
 }
 .footer__branding :hover .pen {
   transform: rotate(30deg);
@@ -269,6 +289,25 @@ li {
   font-size: 16px;
   color: #555;
   margin-top: 1rem;
+}
+
+.scroll-up {
+  position: fixed;
+  right: 64px;
+  bottom: 64px;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  border: 0;
+  background: #fffcf2;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-up:hover {
+  background-color: #ffbc40;
 }
 
 .hero {
@@ -675,8 +714,25 @@ li {
   align-items: center;
   gap: 1rem;
 }
-.contact__social img {
+.contact__social svg {
   width: 50px;
+}
+.contact__social :hover .feecebook, .contact__social :hover .twitter, .contact__social :hover .you-tube {
+  transition: 0.3s;
+  fill: var(--color-accent);
+}
+.contact__social :hover .insta {
+  transition: 0.3s;
+  stroke: var(--color-accent);
+}
+
+.insta {
+  fill: none;
+  stroke: #333;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
 }
 
 /*# sourceMappingURL=style.css.map */
