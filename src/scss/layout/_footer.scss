@@ -1,9 +1,8 @@
 .footer {
     background: #1579ED;
-    min-height: 12rem;
+    min-height: 9rem;
     display: grid;
     grid-template-columns: var(--grid-container);
-    padding: 3rem 0 0;
     overflow: hidden;
 
     &__inner {
@@ -13,7 +12,7 @@
     &__branding {
         
         & svg{
-            margin-top: 10px;
+            margin-top: 2rem;
             width: 100%;
             height: 50px;
         }
@@ -25,6 +24,6 @@
         font-family: 'roboto';
         font-size: 16px;
         color: #555;
-        margin-top: 60px;
+        margin-top: 1rem;
     }
 }

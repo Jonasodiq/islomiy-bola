@@ -1,8 +1,13 @@
+ @use '../utilities/responsive';
 
 .menu {
     display: flex;
     justify-content: end;
     gap: var(--gap-l);
+
+    @include responsive.max( 1024px ) {
+        display: none;
+    }
 
     &__link {
         
@@ -41,7 +46,7 @@
         background: none;
         padding: 0;
         border: 0;
-        top: 16px;
+        top: 18px;
         border-radius: 0;
 
         &:focus, &--close {

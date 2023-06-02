@@ -1,7 +1,8 @@
+@use '../../utilities/responsive';
 .gallery {
     display: grid;
     grid-template-columns: var(--grid-container);
-    padding: var(--section-gap) 0;
+    padding: 0;
     overflow: hidden;
 
     &__inner {
@@ -16,6 +17,10 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         gap: var(--gap-l);
+        //640
+        @include responsive.max(40rem) {
+            gap: var(--gap-s);
+    }
     }
 
     &__image {
