@@ -16,23 +16,27 @@
         align-self: center;
     }
     
-    &__branding {
-        
-        & svg{
-            margin-left: 3rem;
-            width: 100%;
-            height: 50px;
-        }
-        :hover .pen{transform: rotate(30deg);}
-    }
-
     &__nav {
         display: flex;
         justify-content: end;
         gap: 2rem;
     }
-
 }
+
+.branding {
+
+    & svg{
+        margin-left: 2rem;
+        width: 100%;
+        height: 50px;
+    }
+    :hover .pen{transform: rotate(30deg);}
+}
+.st333{fill:#333;}
+.st199{fill:#F4991A;}
+.st237{fill:#FFEC37;}
+.st397{fill:#9C4C97;}
+
 .pen {
     transition: transform 0.3s 0.3s;
 }
