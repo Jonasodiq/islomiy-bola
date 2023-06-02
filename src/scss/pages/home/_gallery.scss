@@ -1,4 +1,5 @@
 @use '../../utilities/responsive';
+
 .gallery {
     display: grid;
     grid-template-columns: var(--grid-container);
@@ -20,7 +21,7 @@
         //640
         @include responsive.max(40rem) {
             gap: var(--gap-s);
-    }
+        }
     }
 
     &__image {

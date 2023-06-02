@@ -1,4 +1,5 @@
 @use '../../utilities/responsive';
+
 .about {
     display: grid;
     grid-template-columns: var(--grid-container);
@@ -9,11 +10,6 @@
         grid-template-columns: var(--grid-container-res);
     }
 
-    // 1024 (64rem)
-        // @include responsive.max(64rem) {
-        //    padding: 0;
-        // }
-
     &__inner {
         grid-column: inner;
         display: grid;
@@ -23,14 +19,6 @@
         @include responsive.max(64rem) {
             grid-template-columns: 1fr;
         }
-        // // 640px
-        // @include responsive.max(40rem) {
-        //     padding: 0 var(--gap-m);
-        // }
-
-        // @include responsive.max(30rem) {
-        //     padding: 0;
-        // }
     }
 
     &__content {
