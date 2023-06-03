@@ -17,6 +17,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 2rem;
+        color: #555;
     }
 
     &__title {
@@ -37,7 +38,7 @@
         gap: 1rem;
         
         & svg {
-            width: 50px;
+            width: 42px;
         }
         :hover .feecebook, :hover .twitter, :hover .you-tube{
             transition: 0.3s;
