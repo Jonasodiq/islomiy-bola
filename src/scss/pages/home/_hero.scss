@@ -132,6 +132,14 @@
         font-size: 12px;
         @include details.separator($align: center);
     }
+    &__regin {
+        transition: all 0.3s;
+        &:hover {
+            opacity: 1;
+            color: var(--color-accent)
+        }
+        
+    }
 
     &__list {
         margin: 0;
