@@ -1,4 +1,5 @@
  @use '../utilities/responsive';
+ @use '../components/details';
 
 .menu {
     display: flex;
@@ -31,6 +32,7 @@
         display: flex;
         align-items:center;
         gap: var(--gap-l);
+        margin: 0;
     }
 
     &__link {
@@ -48,8 +50,13 @@
         border: 0;
         top: 18px;
         border-radius: 0;
+        display: none;
 
-        &:focus, &--close {
+        @include responsive.max( 1024px ) {
+        display: block;
+    }
+
+        &--close {
 
             .menu__button--hamburger {
                 transition: transform 0.2s 0.2s;
@@ -100,5 +107,82 @@
                 transition: width 0.2s 0.2s;
             }
         }
+    }
+}
+
+// Toggle menu
+.right-menu, .left-menu {
+    right: 0;
+    display: grid;
+    background-color: #E3CBF2;
+    position: fixed;
+    width: 300px;
+    height: 600px;
+    border-radius: 50px 0 0 50px;
+    z-index: 999;
+    grid-template-columns: var(--grid-container);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+
+    &--visible {
+        opacity: 1;
+        visibility: visible;
+
+        .right-menu__inner, .left-menu__inner {
+            opacity: 1;
+            transform: translateX(0);
+            transition: transform 0.5s, opacity 0.5s;
+        }
+    }
+
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        text-align: start;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    &__list {
+        margin: 3rem 0 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__link {
+        color: #333;
+        opacity: 0.8;
+        font-family: var(--font-sans);
+        font-size: var(--font-size-3);
+        transition: all 0.3s;
+
+        &:hover {
+            opacity: 1;
+            color: var(--color-accent)
+        }
+    }
+}
+// Left Menu
+.left-menu {
+    left: 0;
+    width: 300px;
+    height: 600px;
+    border-radius: 0 50px 50px 0;
+
+    &__inner {
+        transform: translateX(-100px);
+    }
+
+    &__close {
+        font-size: 45px;
+        font-weight: 400;
+        align-self: flex-start;
     }
 }
