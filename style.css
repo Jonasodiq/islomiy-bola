@@ -73,6 +73,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
+  color: #555;
 }
 
 h1 {
@@ -122,7 +123,7 @@ li {
 }
 
 .header {
-  background-color: rgba(170, 170, 170, 0.3607843137);
+  background-color: #fff;
   position: fixed;
   z-index: 99;
   height: 6rem;
@@ -295,7 +296,7 @@ li {
 .right-menu__inner, .left-menu__inner {
   grid-column: inner;
   display: flex;
-  justify-content: start;
+  justify-content: space-around;
   align-items: center;
   text-align: start;
   flex-direction: column;
@@ -331,6 +332,7 @@ li {
   transform: translateX(-100px);
 }
 .left-menu__close {
+  color: #555;
   font-size: 45px;
   font-weight: 400;
   align-self: flex-start;

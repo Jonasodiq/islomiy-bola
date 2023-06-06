@@ -140,7 +140,7 @@
     &__inner {
         grid-column: inner;
         display: flex;
-        justify-content: start;
+        justify-content: space-around;
         align-items: center;
         text-align: start;
         flex-direction: column;
@@ -181,6 +181,7 @@
     }
 
     &__close {
+        color: #555;
         font-size: 45px;
         font-weight: 400;
         align-self: flex-start;
